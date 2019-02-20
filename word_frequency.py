@@ -26,7 +26,7 @@ def only_lower_case_letters(text):
     return text
 
 def print_word_freq(file_name):
-    """Read in `file` and print out the frequency of words in that file."""
+    """Read in `file_name` and print out the frequency of words in that file."""
     #get the file
     with open(file_name) as file:
         #close it once the file has been read
