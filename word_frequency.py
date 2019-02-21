@@ -45,30 +45,28 @@ def print_word_freq(filename):
         if word != '' and word not in STOP_WORDS:
             #the add to word
           words.append(word)
-          print(words)
+          #" ".join(print_word_freq(filename))
+        #   print(words)
+    word_count = word_frequency(words)
+    return word_count
 
-    return words
 
-
-def character_frequency(words):
+def word_frequency(words):
     #create a list of the frequency of each word in the filename
-    character_count = {}
+    #words = print_word_freq(words)
+    word_count = {}
     #call the list of word from above and find the frequency of each word in that list, If ther word is in words then
-    for character in words:
+    for word in words:
         #if the character in the dictionary frequency is found in the frequency then count it as a time that that character is in the frequency 
-        if character in character_count:
+        if word in word_count:
             #if a character is not in the frequency then count it once.
-            character_count[character] = character_count[character] + 1
+            word_count[word] += 1
         else:
-            
             #if a character is now in frequency then count it again.
-            character_count[character] = 1
-    print(character_count)
-    return character_count
-
-print(" ".join(print_word_freq(only_lower_case_letters)))
-character_count = character_frequency(string)
-print(character_count)
+            word_count[word] = 1
+    # print(word_count)
+   
+    return word_count
 
 if __name__ == "__main__":
     import argparse
